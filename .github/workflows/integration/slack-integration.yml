@@ -31,7 +31,7 @@ jobs:
         uses: rtCamp/action-slack-notify@v2
         env:
           # Specify the Slack channel to notify
-          SLACK_CHANNEL: '#general'
+          SLACK_CHANNEL:  '#github-alerts'
           # Set an emoji icon for the notification
           SLACK_ICON_EMOJI: ':rocket:'
           # Specify the username for the notification
