@@ -1,7 +1,7 @@
 name: Branch Cleanup
 on:
   push:
-    branches: [clean]
+    branches: [main, clean]
   schedule:
     - cron: "0 0 * * *"
 
