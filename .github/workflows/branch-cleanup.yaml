@@ -1,6 +1,4 @@
-$content = @"
 name: Branch Cleanup
-
 on:
   push:
     branches: [clean]
@@ -11,12 +9,10 @@ jobs:
   cleanup:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Clean up unused Branches
-      run: |
-        git fetch --prune 
-        git branch -r --merged origin/main | grep -v "origin/main" || echo "No branches to cleanup"
-"@
-$content | Out-File -FilePath .github/workflows/branch-cleanup.yaml -Encoding utf8
+      - name: Clean up unused Branches
+        run: |
+          git fetch --prune 
+          git branch -r --merged origin/main | grep -v "origin/main" || echo "No branches to cleanup"
